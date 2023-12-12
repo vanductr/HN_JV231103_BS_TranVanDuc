@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HN_ JV231103_BS_TranVanDuc_Bai3</title>
+    <style>
+      #heart {
+        white-space: pre;
+      }
+    </style>
+    <script>
+      function drawHeart(height) {
+        let heart = "";
+
+        for (let row = 0; row < height; row++) {
+          for (let col = 0; col < height * 2; col++) {
+            if (
+              (row < height / 2 && col % 2 === 1) ||
+              (row >= height / 2 &&
+                ((col % 4 === 0 && row - height / 2 === col / 4) ||
+                  (col % 4 === 2 && row - height / 2 === (col - 2) / 4)))
+            ) {
+              heart += "*";
+            } else {
+              heart += " ";
+            }
+          }
+          heart += "\n";
+        }
+
+        return heart;
+      }
+
+      function handleInput() {
+        const height = document.getElementById("height").value;
+        const result = drawHeart(height);
+
+        // Hiển thị kết quả
+        document.getElementById("heart").textContent = result;
+      }
+    </script>
+  </head>
+  <body>
+    <label for="height">Nhập chiều cao của trái tim:</label>
+    <input type="number" id="height" name="height" min="5" value="5" />
+    <button type="button" onclick="handleInput()">Vẽ trái tim</button>
+
+    <pre id="heart"></pre>
+
+    <a href="./indexBai4.html">Bài 4 ở Đây.</a>
+  </body>
+</html>

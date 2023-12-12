@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HN_JS231103_BS_TranVanDuc_Bai4</title>
+    <style>
+      .container p {
+        width: 600px;
+        height: 100px;
+        border: 1px solid #555;
+      }
+    </style>
+    <script>
+      function removeNumbers(inputString) {
+        // Sử dụng regular expression để loại bỏ các ký tự số từ chuỗi
+        const stringWithoutNumbers = inputString.replace(/\d/g, "");
+        return stringWithoutNumbers;
+      }
+
+      function handleInput() {
+        const inputString = document.getElementById("inputString").value;
+        const result = removeNumbers(inputString);
+
+        // Hiển thị kết quả
+        document.getElementById("result").textContent = result;
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <label for="inputString">Nhập chuỗi kí tự:</label>
+      <input type="text" id="inputString" name="inputString" />
+      <button type="button" onclick="handleInput()">Xóa số</button>
+
+      <p id="result"></p>
+
+      <div class="linkBai5" style="margin: 30px">
+        <a href="./indexBai5.html">Bài 5 ở Đây</a>
+      </div>
+    </div>
+  </body>
+</html>

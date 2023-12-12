@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HN_ JV231103_BS_TranVanDuc_Bai2</title>
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+      }
+
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+
+      tbody tr:hover {
+        background-color: #f5f5f5;
+      }
+
+      tfoot {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h2 style="margin: 20px">Bài Tập 2</h2>
+
+    <table id="resultTable">
+      <thead>
+        <tr>
+          <th>Giá trị trả về</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="resultCell"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <form id="inputForm">
+      <label for="numberInput"
+        >Nhập các số nguyên cách nhau bởi Dấu cách:</label
+      >
+      <input type="text" id="numberInput" name="numberInput" />
+      <button type="button" onclick="calculatePrimeSum()">
+        Tổng các số Nguyên tố
+      </button>
+    </form>
+
+    <a href="./indexBai3.html">Bài 3 ở Đây.</a>
+
+    <script>
+      function calculatePrimeSum() {
+        const inputString = document.getElementById("numberInput").value;
+        const numbers = inputString.split(" ").map(Number);
+
+        const primeSum = sumOfPrimes(numbers);
+
+        const resultCell = document.getElementById("resultCell");
+        resultCell.textContent = primeSum;
+
+        document.getElementById("numberInput").value = "";
+      }
+
+      function sumOfPrimes(numbers) {
+        function isPrime(num) {
+          if (num < 2) return false;
+          for (let i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i === 0) {
+              return false;
+            }
+          }
+          return true;
+        }
+
+        let primeSum = 0;
+        for (let i = 0; i < numbers.length; i++) {
+          if (isPrime(numbers[i])) {
+            primeSum += numbers[i];
+          }
+        }
+
+        return primeSum;
+      }
+    </script>
+  </body>
+</html>

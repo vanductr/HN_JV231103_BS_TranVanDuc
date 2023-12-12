@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HN_JS231103_BS_TranVanDuc_Bai5</title>
+  </head>
+  <style>
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .containerbai5 {
+      margin: 300px auto;
+    }
+    .containerbai5 input {
+      width: 300px;
+    }
+    .link {
+      margin-top: 100px;
+      margin-left: 50px;
+    }
+    div a {
+      text-decoration: none;
+      display: block;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    .containerbai5 p {
+      width: 600px;
+      height: 100px;
+      border: 1px solid #555;
+    }
+  </style>
+  <body>
+    <h2>Bài Tập 5</h2>
+    <div class="containerbai5">
+      <label for="inputString">Nhập chuỗi ký tự:</label>
+      <input type="text" id="inputString" name="inputString" />
+      <button type="button" onclick="handleInput()">Đảo ngược</button>
+
+      <p id="result"></p>
+
+      <div class="link">
+        <a href="./indexBai1.html">Bài Tập 1</a>
+        <a href="./indexBai2.html">Bài Tập 2</a>
+        <a href="./indexBai3.html">Bài Tập 3</a>
+        <a href="./indexBai4.html">Bài Tập 4</a>
+      </div>
+    </div>
+    <!-----------------------------JS ------------------->
+    <script>
+      function reverseString(inputString) {
+        const words = inputString.split(" ");
+
+        const reversedWords = words.map((word) => {
+          return word.split("").reverse().join("");
+        });
+
+        const reversedString = reversedWords.join(" ");
+
+        return reversedString;
+      }
+
+      function handleInput() {
+        const inputString = document.getElementById("inputString").value;
+        const result = reverseString(inputString);
+
+        document.getElementById("result").textContent = result;
+      }
+    </script>
+  </body>
+</html>

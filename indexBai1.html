@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HN_JS231103_BS_TranVanDuc_Bai 1</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container-bai">
+      <h2>Bài số 1: Tìm số Nguyên lớn Nhất</h2>
+      <!-- HTML Table -->
+      <table id="resultTable">
+        <thead>
+          <tr>
+            <th>Số lớn nhất</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td id="resultCell"></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Input Form -->
+      <form id="inputForm">
+        <label for="numberInput"
+          >Nhập 5 số nguyên cách nhau bởi dấu cách:</label
+        >
+        <input type="text" id="numberInput" name="numberInput" />
+        <button type="button" onclick="findMaxUnique()">
+          Số Lớn nhất - duy nhất
+        </button>
+      </form>
+    </div>
+
+    <a href="./indexBai2.html">Bài 2 ở Đây.</a>
+
+    <!----------------- JS link ---------------------->
+    <script src="./script.js"></script>
+  </body>
+</html>
